@@ -88,7 +88,7 @@ class CalcScreen extends StatelessWidget {
                         ),
                         SizedBox(width: 16),
                         Button(
-                          text: 'X',
+                          text: 'x',
                           color: 'blue',
                         ),
                       ],
