@@ -7,7 +7,7 @@ class CalcScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => Scaffold(
-        backgroundColor: Constants.colorbg,
+        backgroundColor: Constants.backgroundColorLight,
         body: SafeArea(
           child: Column(
             children: [

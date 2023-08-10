@@ -6,7 +6,9 @@ class Constants {
   static const String deleteIcon = 'assets/delete.svg';
   static const String plusMinusIcon = 'assets/plus_minus.svg';
 
-  static const Color colorbg = Color(0xFFf1f2f3);
+  static const Color backgroundColorLight = Color(0xFFf1f2f3);
+  static const Color backgroundColorDark = Color(0xFF17171C);
+
   static const Color calculationColor = Color(0xFF9E9E9E);
   static const Color numberDark = Color(0xFFFFFFFF);
   static const Color numberLight = Color(0xFF000000);
