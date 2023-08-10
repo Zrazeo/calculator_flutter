@@ -1,4 +1,6 @@
+import 'package:calculator/utils/constants.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 class Button extends StatelessWidget {
   const Button({
@@ -7,31 +9,41 @@ class Button extends StatelessWidget {
     Key? key,
     this.value,
   }) : super(key: key);
+
   final String text;
   final double? value;
   final String color;
 
   @override
   Widget build(BuildContext context) {
-    final colorMap = {
-      'white': Colors.white,
-      'blue': Colors.blue,
-      'grey': Colors.grey,
-    };
-
     return Container(
       width: 75,
       height: 70,
       decoration: BoxDecoration(
-        color: colorMap[color] ?? Colors.grey,
+        color: Constants.colorMap[color] ?? Colors.grey,
         borderRadius: BorderRadius.circular(25),
       ),
       child: TextButton(
         onPressed: () {},
-        child: Text(
-          text,
-          style: const TextStyle(fontSize: 32, color: Colors.black),
-        ),
+        child: text == 'delete' || text == 'plus_minus'
+            ? SvgPicture.asset(
+                text == 'delete'
+                    ? Constants.deleteIcon
+                    : Constants.plusMinusIcon,
+                width: 32,
+                height: 32,
+                colorFilter: const ColorFilter.mode(
+                  Constants.numberLight,
+                  BlendMode.srcIn,
+                ),
+              )
+            : Text(
+                text,
+                style: const TextStyle(
+                  fontSize: 32,
+                  color: Constants.numberLight,
+                ),
+              ),
       ),
     );
   }
