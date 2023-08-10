@@ -1,13 +1,13 @@
-import 'package:flutter/material.dart';
-import 'package:calculator/widgets/button.dart';
 import 'package:calculator/utils/constants.dart';
+import 'package:calculator/widgets/button.dart';
+import 'package:flutter/material.dart';
 
 class CalcScreen extends StatelessWidget {
   const CalcScreen({super.key});
 
   @override
   Widget build(BuildContext context) => Scaffold(
-        backgroundColor: const Color.fromRGBO(241, 242, 243, 1),
+        backgroundColor: Constants.colorbg,
         body: Column(
           children: [
             Center(
@@ -40,14 +40,14 @@ class CalcScreen extends StatelessWidget {
                 ),
               ),
             ),
-            Padding(
-              padding: const EdgeInsets.fromLTRB(24, 16, 20, 0),
+            const Padding(
+              padding: EdgeInsets.fromLTRB(24, 16, 20, 0),
               child: Align(
                 alignment: Alignment.bottomCenter,
                 child: Column(
                   children: [
                     Row(
-                      children: const [
+                      children: [
                         Button(
                           text: 'C',
                           color: 'grey',
@@ -69,9 +69,9 @@ class CalcScreen extends StatelessWidget {
                         ),
                       ],
                     ),
-                    const SizedBox(height: 16),
+                    SizedBox(height: 16),
                     Row(
-                      children: const [
+                      children: [
                         Button(
                           text: '1',
                           color: 'white',
@@ -93,9 +93,9 @@ class CalcScreen extends StatelessWidget {
                         ),
                       ],
                     ),
-                    const SizedBox(height: 16),
+                    SizedBox(height: 16),
                     Row(
-                      children: const [
+                      children: [
                         Button(
                           text: '4',
                           color: 'white',
@@ -117,9 +117,9 @@ class CalcScreen extends StatelessWidget {
                         ),
                       ],
                     ),
-                    const SizedBox(height: 16),
+                    SizedBox(height: 16),
                     Row(
-                      children: const [
+                      children: [
                         Button(
                           text: '7',
                           color: 'white',
@@ -141,9 +141,9 @@ class CalcScreen extends StatelessWidget {
                         ),
                       ],
                     ),
-                    const SizedBox(height: 16),
+                    SizedBox(height: 16),
                     Row(
-                      children: const [
+                      children: [
                         Button(
                           text: '.',
                           color: 'white',

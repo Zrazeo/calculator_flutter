@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 
 class Button extends StatelessWidget {
+  const Button({
+    required this.text,
+    required this.color,
+    Key? key,
+    this.value,
+  }) : super(key: key);
   final String text;
   final double? value;
   final String color;
-  const Button({
-    Key? key,
-    required this.text,
-    this.value,
-    required this.color,
-  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -19,14 +19,12 @@ class Button extends StatelessWidget {
       'grey': Colors.grey,
     };
 
-    final bgColor = colorMap[color] ?? Colors.grey;
-
     return Container(
       width: 75,
       height: 70,
       decoration: BoxDecoration(
-        color: bgColor,
-        borderRadius: BorderRadius.circular(25), // Zaokrąglenie rogów
+        color: colorMap[color] ?? Colors.grey,
+        borderRadius: BorderRadius.circular(25),
       ),
       child: TextButton(
         onPressed: () {},
