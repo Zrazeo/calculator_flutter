@@ -1,3 +1,4 @@
+import 'package:calculator/utils/calculator_colors.dart';
 import 'package:calculator/utils/constants.dart';
 import 'package:calculator/widgets/keyboard.dart';
 import 'package:flutter/material.dart';
@@ -7,15 +8,20 @@ class CalcScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => Scaffold(
-        backgroundColor: Constants.backgroundColorLight,
+        backgroundColor: CalculatorColors.backgroundColorLight,
         body: SafeArea(
           child: Column(
             children: [
+              const SizedBox(
+                height: 20,
+              ),
               Center(
                 child: SizedBox(
                   width: Constants.buttonWidth,
                   height: Constants.buttonHeight,
-                  child: Image.asset(Constants.lightModeAssetPath),
+                  child: Image.asset(
+                    Constants.lightModeAssetPath,
+                  ),
                 ),
               ),
               const Padding(
@@ -29,7 +35,7 @@ class CalcScreen extends StatelessWidget {
                     '6,291/5',
                     style: TextStyle(
                       fontSize: 45,
-                      color: Constants.calculationColor,
+                      color: CalculatorColors.calculationColor,
                     ),
                   ),
                 ),
@@ -45,7 +51,7 @@ class CalcScreen extends StatelessWidget {
                     '1,258.2',
                     style: TextStyle(
                       fontSize: 96,
-                      color: Constants.numberLight,
+                      color: CalculatorColors.numberLight,
                     ),
                   ),
                 ),
