@@ -1,5 +1,5 @@
+import 'package:calculator/utils/assets.dart';
 import 'package:calculator/utils/calculator_colors.dart';
-import 'package:calculator/utils/constants.dart';
 import 'package:calculator/widgets/keyboard.dart';
 import 'package:flutter/material.dart';
 
@@ -17,10 +17,10 @@ class CalcScreen extends StatelessWidget {
               ),
               Center(
                 child: SizedBox(
-                  width: Constants.buttonWidth,
-                  height: Constants.buttonHeight,
+                  width: Assets.buttonWidth,
+                  height: Assets.buttonHeight,
                   child: Image.asset(
-                    Constants.lightModeAssetPath,
+                    Assets.lightModeAssetPath,
                   ),
                 ),
               ),

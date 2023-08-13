@@ -8,11 +8,9 @@ class CalculatorColors {
   static const Color numberDark = Color(0xFFFFFFFF);
   static const Color numberLight = Color(0xFF000000);
 
-  static const Map<String, Color> colorMap = {
-    'light_mode': Color(0xFFFFFFFF),
-    'dark_mode': Color(0xFF2E2F38),
-    'blue': Color(0xFF4B5EFC),
-    'grey_light': Color(0xFFD2D3DA),
-    'grey_dark': Color(0xFF4E505F),
-  };
+  static const Color lightMode = Color(0xFFFFFFFF);
+  static const Color darkMode = Color(0xFF2E2F38);
+  static const Color blue = Color(0xFF4B5EFC);
+  static const Color greyLight = Color(0xFFD2D3DA);
+  static const Color greyDark = Color(0xFF4E505F);
 }
