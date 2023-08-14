@@ -1,4 +1,5 @@
 import 'package:calculator/utils/calculator_colors.dart';
+import 'package:calculator/utils/dimens.dart';
 import 'package:calculator/widgets/button.dart';
 import 'package:flutter/material.dart';
 
@@ -8,7 +9,7 @@ class Keyboard extends StatelessWidget {
   @override
   Widget build(BuildContext context) => Column(
         children: [
-          const SizedBox(height: 16),
+          const SizedBox(height: Dimens.spacing),
           rowButtons(
             [
               const Button(
@@ -29,7 +30,7 @@ class Keyboard extends StatelessWidget {
               ),
             ],
           ),
-          const SizedBox(height: 16),
+          const SizedBox(height: Dimens.spacing),
           rowButtons(
             [
               const Button(
@@ -50,7 +51,7 @@ class Keyboard extends StatelessWidget {
               ),
             ],
           ),
-          const SizedBox(height: 16),
+          const SizedBox(height: Dimens.spacing),
           rowButtons(
             [
               const Button(
@@ -71,7 +72,7 @@ class Keyboard extends StatelessWidget {
               ),
             ],
           ),
-          const SizedBox(height: 16),
+          const SizedBox(height: Dimens.spacing),
           rowButtons(
             [
               const Button(
@@ -92,7 +93,7 @@ class Keyboard extends StatelessWidget {
               ),
             ],
           ),
-          const SizedBox(height: 16),
+          const SizedBox(height: Dimens.spacing),
           rowButtons(
             [
               const Button(

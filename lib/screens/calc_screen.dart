@@ -1,5 +1,6 @@
 import 'package:calculator/utils/assets.dart';
 import 'package:calculator/utils/calculator_colors.dart';
+import 'package:calculator/utils/dimens.dart';
 import 'package:calculator/widgets/keyboard.dart';
 import 'package:flutter/material.dart';
 
@@ -13,12 +14,12 @@ class CalcScreen extends StatelessWidget {
           child: Column(
             children: [
               const SizedBox(
-                height: 20,
+                height: Dimens.spacing,
               ),
               Center(
                 child: SizedBox(
-                  width: Assets.buttonWidth,
-                  height: Assets.buttonHeight,
+                  width: Dimens.imageWidth,
+                  height: Dimens.imageHeight,
                   child: Image.asset(
                     Assets.lightModeAssetPath,
                   ),
@@ -26,7 +27,7 @@ class CalcScreen extends StatelessWidget {
               ),
               const Padding(
                 padding: EdgeInsetsDirectional.only(
-                  top: 40,
+                  top: 20,
                   end: 20,
                 ),
                 child: Align(
@@ -34,7 +35,7 @@ class CalcScreen extends StatelessWidget {
                   child: Text(
                     '6,291/5',
                     style: TextStyle(
-                      fontSize: 45,
+                      fontSize: Dimens.fontSizeCalculation,
                       color: CalculatorColors.calculationColor,
                     ),
                   ),
@@ -50,7 +51,7 @@ class CalcScreen extends StatelessWidget {
                   child: Text(
                     '1,258.2',
                     style: TextStyle(
-                      fontSize: 96,
+                      fontSize: Dimens.fontSizeNumber,
                       color: CalculatorColors.numberLight,
                     ),
                   ),
