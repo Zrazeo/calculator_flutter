@@ -26,14 +26,11 @@ class CalcScreen extends StatelessWidget {
                 ),
               ),
               const Padding(
-                padding: EdgeInsetsDirectional.only(
-                  top: 20,
-                  end: 20,
-                ),
+                padding: Dimens.calculationPadding,
                 child: Align(
                   alignment: Alignment.bottomRight,
                   child: Text(
-                    '6,291/5',
+                    '6,291÷5',
                     style: TextStyle(
                       fontSize: Dimens.fontSizeCalculation,
                       color: CalculatorColors.calculationColor,
@@ -42,10 +39,7 @@ class CalcScreen extends StatelessWidget {
                 ),
               ),
               const Padding(
-                padding: EdgeInsetsDirectional.only(
-                  top: 16,
-                  end: 20,
-                ),
+                padding: Dimens.numberPadding,
                 child: Align(
                   alignment: Alignment.bottomRight,
                   child: Text(
@@ -58,11 +52,7 @@ class CalcScreen extends StatelessWidget {
                 ),
               ),
               const Padding(
-                padding: EdgeInsetsDirectional.only(
-                  start: 24,
-                  top: 16,
-                  end: 20,
-                ),
+                padding: Dimens.keyboardPadding,
                 child: Align(
                   alignment: Alignment.bottomCenter,
                   child: Keyboard(),

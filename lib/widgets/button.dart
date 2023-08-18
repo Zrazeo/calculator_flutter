@@ -39,7 +39,7 @@ class Button extends StatelessWidget {
               : Text(
                   text,
                   style: const TextStyle(
-                    fontSize: 32,
+                    fontSize: Dimens.textButtonSize,
                     color: CalculatorColors.numberLight,
                   ),
                 ),
