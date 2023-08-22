@@ -1,15 +1,19 @@
+import 'package:calculator/blocs/mode_cubit.dart';
 import 'package:calculator/utils/assets.dart';
 import 'package:calculator/utils/calculator_colors.dart';
 import 'package:calculator/utils/dimens.dart';
 import 'package:calculator/widgets/keyboard.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class CalcScreen extends StatelessWidget {
   const CalcScreen({super.key});
 
   @override
   Widget build(BuildContext context) => Scaffold(
-        backgroundColor: CalculatorColors.backgroundColorLight,
+        backgroundColor: context.watch<ModeCubit>().state.mode
+            ? CalculatorColors.backgroundColorLight
+            : CalculatorColors.backgroundColorDark,
         body: SafeArea(
           child: Column(
             children: [
@@ -17,11 +21,14 @@ class CalcScreen extends StatelessWidget {
                 height: Dimens.spacing,
               ),
               Center(
-                child: SizedBox(
-                  width: Dimens.imageWidth,
-                  height: Dimens.imageHeight,
+                child: InkWell(
+                  onTap: () {
+                    context.read<ModeCubit>().toggleMode();
+                  },
                   child: Image.asset(
-                    Assets.lightModeAssetPath,
+                    context.watch<ModeCubit>().state.mode
+                        ? Assets.lightModeAssetPath
+                        : Assets.darkModeAssetPath,
                   ),
                 ),
               ),
@@ -38,7 +45,7 @@ class CalcScreen extends StatelessWidget {
                   ),
                 ),
               ),
-              const Padding(
+              Padding(
                 padding: Dimens.numberPadding,
                 child: Align(
                   alignment: Alignment.bottomRight,
@@ -46,7 +53,9 @@ class CalcScreen extends StatelessWidget {
                     '1,258.2',
                     style: TextStyle(
                       fontSize: Dimens.fontSizeNumber,
-                      color: CalculatorColors.numberLight,
+                      color: context.watch<ModeCubit>().state.mode
+                          ? CalculatorColors.numberLight
+                          : CalculatorColors.numberDark,
                     ),
                   ),
                 ),
