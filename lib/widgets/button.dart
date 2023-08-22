@@ -1,7 +1,9 @@
+import 'package:calculator/blocs/mode_cubit.dart';
 import 'package:calculator/utils/assets.dart';
 import 'package:calculator/utils/calculator_colors.dart';
 import 'package:calculator/utils/dimens.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class Button extends StatelessWidget {
@@ -31,16 +33,20 @@ class Button extends StatelessWidget {
                   text == 'delete' ? Assets.deleteIcon : Assets.plusMinusIcon,
                   width: Dimens.svgWidth,
                   height: Dimens.svgHeight,
-                  colorFilter: const ColorFilter.mode(
-                    CalculatorColors.numberLight,
+                  colorFilter: ColorFilter.mode(
+                    context.watch<ModeCubit>().state.mode
+                        ? CalculatorColors.numberLight
+                        : CalculatorColors.numberDark,
                     BlendMode.srcIn,
                   ),
                 )
               : Text(
                   text,
-                  style: const TextStyle(
+                  style: TextStyle(
                     fontSize: Dimens.textButtonSize,
-                    color: CalculatorColors.numberLight,
+                    color: context.watch<ModeCubit>().state.mode
+                        ? CalculatorColors.numberLight
+                        : CalculatorColors.numberDark,
                   ),
                 ),
         ),
