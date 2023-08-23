@@ -6,7 +6,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class Keyboard extends StatelessWidget {
-  const Keyboard({Key? key}) : super(key: key);
+  const Keyboard({
+    required this.onPressed,
+    Key? key,
+  }) : super(key: key);
+
+  final void Function(String) onPressed;
 
   @override
   Widget build(BuildContext context) {
@@ -19,79 +24,33 @@ class Keyboard extends StatelessWidget {
           [
             Button(
               text: 'C',
+              value: 'C',
               color: isDarkMode
                   ? CalculatorColors.greyLight
                   : CalculatorColors.greyDark,
+              onPressed: onPressed,
             ),
             Button(
               text: 'plus_minus',
+              value: 'plus_minus',
               color: isDarkMode
                   ? CalculatorColors.greyLight
                   : CalculatorColors.greyDark,
+              onPressed: onPressed,
             ),
             Button(
               text: '%',
+              value: '%',
               color: isDarkMode
                   ? CalculatorColors.greyLight
                   : CalculatorColors.greyDark,
+              onPressed: onPressed,
             ),
-            const Button(
+            Button(
               text: '÷',
+              value: '/',
               color: CalculatorColors.blue,
-            ),
-          ],
-        ),
-        const SizedBox(height: Dimens.spacing),
-        rowButtons(
-          [
-            Button(
-              text: '1',
-              color: isDarkMode
-                  ? CalculatorColors.lightMode
-                  : CalculatorColors.darkMode,
-            ),
-            Button(
-              text: '2',
-              color: isDarkMode
-                  ? CalculatorColors.lightMode
-                  : CalculatorColors.darkMode,
-            ),
-            Button(
-              text: '3',
-              color: isDarkMode
-                  ? CalculatorColors.lightMode
-                  : CalculatorColors.darkMode,
-            ),
-            const Button(
-              text: '×',
-              color: CalculatorColors.blue,
-            ),
-          ],
-        ),
-        const SizedBox(height: Dimens.spacing),
-        rowButtons(
-          [
-            Button(
-              text: '4',
-              color: isDarkMode
-                  ? CalculatorColors.lightMode
-                  : CalculatorColors.darkMode,
-            ),
-            Button(
-              text: '5',
-              color: isDarkMode
-                  ? CalculatorColors.lightMode
-                  : CalculatorColors.darkMode,
-            ),
-            Button(
-              text: '6',
-              color: isDarkMode
-                  ? CalculatorColors.lightMode
-                  : CalculatorColors.darkMode,
-            ),
-            const Button(
-              text: '–',
-              color: CalculatorColors.blue,
+              onPressed: onPressed,
             ),
           ],
         ),
@@ -100,25 +59,103 @@ class Keyboard extends StatelessWidget {
           [
             Button(
               text: '7',
+              value: '7',
               color: isDarkMode
                   ? CalculatorColors.lightMode
                   : CalculatorColors.darkMode,
+              onPressed: onPressed,
             ),
             Button(
               text: '8',
+              value: '8',
               color: isDarkMode
                   ? CalculatorColors.lightMode
                   : CalculatorColors.darkMode,
+              onPressed: onPressed,
             ),
             Button(
               text: '9',
+              value: '9',
               color: isDarkMode
                   ? CalculatorColors.lightMode
                   : CalculatorColors.darkMode,
+              onPressed: onPressed,
             ),
-            const Button(
-              text: '+',
+            Button(
+              text: '×',
+              value: '*',
               color: CalculatorColors.blue,
+              onPressed: onPressed,
+            ),
+          ],
+        ),
+        const SizedBox(height: Dimens.spacing),
+        rowButtons(
+          [
+            Button(
+              text: '4',
+              value: '4',
+              color: isDarkMode
+                  ? CalculatorColors.lightMode
+                  : CalculatorColors.darkMode,
+              onPressed: onPressed,
+            ),
+            Button(
+              text: '5',
+              value: '5',
+              color: isDarkMode
+                  ? CalculatorColors.lightMode
+                  : CalculatorColors.darkMode,
+              onPressed: onPressed,
+            ),
+            Button(
+              text: '6',
+              value: '6',
+              color: isDarkMode
+                  ? CalculatorColors.lightMode
+                  : CalculatorColors.darkMode,
+              onPressed: onPressed,
+            ),
+            Button(
+              text: '–',
+              value: '-',
+              color: CalculatorColors.blue,
+              onPressed: onPressed,
+            ),
+          ],
+        ),
+        const SizedBox(height: Dimens.spacing),
+        rowButtons(
+          [
+            Button(
+              text: '1',
+              value: '1',
+              color: isDarkMode
+                  ? CalculatorColors.lightMode
+                  : CalculatorColors.darkMode,
+              onPressed: onPressed,
+            ),
+            Button(
+              text: '2',
+              value: '2',
+              color: isDarkMode
+                  ? CalculatorColors.lightMode
+                  : CalculatorColors.darkMode,
+              onPressed: onPressed,
+            ),
+            Button(
+              text: '3',
+              value: '3',
+              color: isDarkMode
+                  ? CalculatorColors.lightMode
+                  : CalculatorColors.darkMode,
+              onPressed: onPressed,
+            ),
+            Button(
+              text: '+',
+              value: '+',
+              color: CalculatorColors.blue,
+              onPressed: onPressed,
             ),
           ],
         ),
@@ -127,25 +164,33 @@ class Keyboard extends StatelessWidget {
           [
             Button(
               text: '.',
+              value: '.',
               color: isDarkMode
                   ? CalculatorColors.lightMode
                   : CalculatorColors.darkMode,
+              onPressed: onPressed,
             ),
             Button(
               text: '0',
+              value: '0',
               color: isDarkMode
                   ? CalculatorColors.lightMode
                   : CalculatorColors.darkMode,
+              onPressed: onPressed,
             ),
             Button(
               text: 'delete',
+              value: 'delete',
               color: isDarkMode
                   ? CalculatorColors.lightMode
                   : CalculatorColors.darkMode,
+              onPressed: onPressed,
             ),
-            const Button(
+            Button(
               text: '=',
+              value: '=',
               color: CalculatorColors.blue,
+              onPressed: onPressed,
             ),
           ],
         ),

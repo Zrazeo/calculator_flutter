@@ -1,11 +1,19 @@
+import 'package:calculator/blocs/calculator_cubit.dart';
 import 'package:calculator/blocs/mode_cubit.dart';
 import 'package:calculator/screens/calc_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 void main() => runApp(
-      BlocProvider(
-        create: (context) => ModeCubit(),
+      MultiBlocProvider(
+        providers: [
+          BlocProvider(
+            create: (context) => ModeCubit(),
+          ),
+          BlocProvider(
+            create: (context) => CalculatorCubit(),
+          ),
+        ],
         child: const MyApp(),
       ),
     );
